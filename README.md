@@ -1,5 +1,5 @@
 
-### Laboratorio Calificado 3 : CRUD Docente con SwfitData
+### Laboratorio Calificado 3 : CRUD Docente con SwiftData
 
 ### Implementar
 
