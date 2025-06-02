@@ -6,7 +6,7 @@
 #### 1.- Página principal y creación de docente
 
 <p float="left">
-  <img src="./images/main.png" width="23%" alt="Calculator Screen" hspace="20" />
+  <img src="./images/main.png" width="24%" alt="Calculator Screen" hspace="20" />
   <img src="./images/create.png" width="25%" alt="Results Screen" hspace="20" />
 </p>
 
