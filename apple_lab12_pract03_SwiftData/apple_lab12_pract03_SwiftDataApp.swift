@@ -1,10 +1,3 @@
-//
-//  apple_lab12_pract03_SwiftDataApp.swift
-//  apple_lab12_pract03_SwiftData
-//
-//  Created by Jaime Gomez on 1/6/25.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -12,7 +5,7 @@ import SwiftData
 struct apple_lab12_pract03_SwiftDataApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Docente.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
