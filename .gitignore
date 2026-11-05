@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcuserdata/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# JetBrains IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+*.iqworkspace
+
+# Junie agent sessions and settings (collaborator info)
+.junie/
+
+# Swift Package Manager
+.swiftpm/
+
+# CocoaPods
+Pods/
+
+# Node modules (if any)
+node_modules/

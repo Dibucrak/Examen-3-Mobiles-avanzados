@@ -15,39 +15,37 @@ struct AddTeacherView: View {
     @State private var isActive = true
 
     var body: some View {
-        NavigationView {
-            Form {
-                Section("PERSONAL INFORMATION") {
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    TextField("Email", text: $email)
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                    TextField("Phone", text: $phone)
-                        .keyboardType(.phonePad)
-                    DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
-                }
+        Form {
+            Section("INFORMACIÓN PERSONAL") {
+                TextField("Nombre", text: $firstName)
+                TextField("Apellido", text: $lastName)
+                TextField("Correo electrónico", text: $email)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                TextField("Teléfono", text: $phone)
+                    .keyboardType(.phonePad)
+                DatePicker("Fecha de nacimiento", selection: $dateOfBirth, displayedComponents: .date)
+            }
 
-                Section("PROFESSIONAL INFORMATION") {
-                    TextField("Specialization", text: $specialization)
-                    DatePicker("Hire Date", selection: $hireDate, displayedComponents: .date)
-                    Toggle("Active", isOn: $isActive)
+            Section("INFORMACIÓN PROFESIONAL") {
+                TextField("Especialización", text: $specialization)
+                DatePicker("Fecha de contratación", selection: $hireDate, displayedComponents: .date)
+                Toggle("Activo", isOn: $isActive)
+            }
+        }
+        .navigationTitle("Agregar docente")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancelar") {
+                    dismiss()
                 }
             }
-            .navigationTitle("Add Teacher")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Guardar") {
+                    saveTeacher()
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Save") {
-                        saveTeacher()
-                    }
-                    .disabled(firstName.trimmingCharacters(in: .whitespaces).isEmpty ||
-                              lastName.trimmingCharacters(in: .whitespaces).isEmpty)
-                }
+                .disabled(firstName.trimmingCharacters(in: .whitespaces).isEmpty ||
+                          lastName.trimmingCharacters(in: .whitespaces).isEmpty)
             }
         }
     }
