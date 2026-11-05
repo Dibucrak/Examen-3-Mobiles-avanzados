@@ -97,6 +97,7 @@ Transform ContentView into the main Teachers list page.
 - Add NavigationLink to AddTeacherView from the '+' button
 
 ### ✓ Step 3: Implement Add Teacher form
+### ✓ Step 4: Implement Edit Teacher and Delete functionality
 Create the AddTeacherView with a complete form for creating new teachers.
 - Create `AddTeacherView.swift` with two sections: Personal Information and Professional Information
 - Add TextFields, DatePickers, and Toggle for all fields

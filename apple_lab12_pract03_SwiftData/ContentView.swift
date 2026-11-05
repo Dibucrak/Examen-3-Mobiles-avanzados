@@ -5,6 +5,8 @@ struct ContentView: View {
     @Query private var teachers: [Docente]
     @State private var searchText = ""
     @State private var showingAddForm = false
+    @State private var selectedTeacher: Docente?
+    @Environment(\.modelContext) private var modelContext
 
     var filteredTeachers: [Docente] {
         if searchText.isEmpty {
@@ -35,6 +37,9 @@ struct ContentView: View {
                 }
                 .navigationDestination(isPresented: $showingAddForm) {
                     AddTeacherView()
+                }
+                .navigationDestination(item: $selectedTeacher) { teacher in
+                    EditTeacherView(teacher: teacher)
                 }
         }
     }
@@ -72,6 +77,17 @@ struct ContentView: View {
                                     .font(.subheadline)
                                     .foregroundColor(.gray)
                             }
+                        }
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedTeacher = teacher
+                    }
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            modelContext.delete(teacher)
+                        } label: {
+                            Label("Eliminar", systemImage: "trash")
                         }
                     }
                 }
